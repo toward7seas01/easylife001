@@ -1,0 +1,17 @@
+<% css 'topics/show' %>
+
+<%= link_to '论坛首页', forums_path %>&nbsp;→&nbsp;
+<%= link_to h(@topic.forum.title) + " ", forum_path(params[:forum_id]) %>&nbsp;→&nbsp;
+<%= title_or_link %>
+<br />
+<br />
+
+<table id="comments_table">
+  <tr>
+    <th>作者</th>
+    <th>正文</th>
+  </tr>
+  <% @comments = [@comment] if @comment %>
+  <%= render :partial => "topics/comment", :collection => @comments, :locals => {:preview => @preview} %>
+
+</table>

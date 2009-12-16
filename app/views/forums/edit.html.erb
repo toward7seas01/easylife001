@@ -1,0 +1,21 @@
+<h1>编辑论坛信息</h1>
+<br />
+<br />
+<% form_for(@forum, :url => {:action => :update }) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :title, '论坛' %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :info, '补充说明' %><br />
+    <%= f.text_field :info %>
+  </p>
+  <p>
+    <%= f.submit "修改" %>
+  </p>
+<% end %>
+
+<%= link_to '查看', forum_path %> |
+<%= link_to '返回', forums_path %>

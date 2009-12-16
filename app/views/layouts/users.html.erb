@@ -1,0 +1,47 @@
+<% content_for :lhead do %>
+  <%= stylesheet_link_tag "blogs/base" %>
+<% end %>
+
+<%= render :partial => '/layouts/header' %>
+<!-- start page -->
+<div id="wrapper">
+  <div id="wrapper-btm">
+    <div id="page">
+      <!-- start content -->
+      <div id="content">
+        <% show_banner do %>
+          &nbsp;
+        <% end %>
+        <br />
+        <br />
+        <div id="insert" >
+          <%= yield %>
+        </div>
+      </div>
+      <!-- end content -->
+    <!-- start sidebar -->
+      <div id="sidebar">
+        <ul>
+          <%= render :partial => '/layouts/search' %>
+          <li>
+            <h2>分类</h2>
+            <ul>
+              <li><%= link_to "全部博客 (#{@current_blogs_size} 篇)", user_path(page_user_id) %>
+              <% unless @current_categories.blank? %>
+                <% @current_categories.each do |category| %>
+                  <li><%= link_to h("#{category.name} ( #{category.blogs_count} )"), user_category_path(page_user_id, category.id) %></li>
+                <% end %>
+              <% else %>
+                <li>尚无分类</li>
+              <% end %>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!-- end sidebar -->
+      <div style="clear: both;">&nbsp;</div>
+    </div>
+    <!-- end page -->
+  </div>
+</div>
+<%= render :partial => '/layouts/footer' %>

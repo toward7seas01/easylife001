@@ -1,0 +1,25 @@
+.searched_user {
+    height: 120px;
+    padding: 5px 0px;
+    border-bottom: 1px solid #CCCCCC;
+    position: relative;
+}
+
+.searched_user .user_profile {
+    width: 150px;
+    float: left;
+}
+
+.searched_user .user_info {
+    margin-left: 150px;
+}
+
+.comment_info {
+    margin-top: 90px;
+}
+
+.result_path {
+    position: absolute;
+    left: 200px;
+    top: 110px;
+}

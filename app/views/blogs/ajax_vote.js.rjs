@@ -1,0 +1,3 @@
+page.replace_votes_size(@vote_kind, @votes_size)
+page[vote_kind_identifier(@vote_kind).to_sym].visual_effect :highlight
+page.replace 'shove'

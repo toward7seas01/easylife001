@@ -1,0 +1,4 @@
+<%= show_profile(@profile) %>
+
+<%= render :partial => "images/image_upload", :object => @image %>
+<%= s(@profile) unless @profile.id == 1 %>

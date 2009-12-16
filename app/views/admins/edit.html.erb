@@ -1,0 +1,24 @@
+<h1>编辑管理员信息</h1>
+<br />
+<%= error_messages_for 'admin', 'user' %>
+
+<% form_for(@user, :url => admin_path(params[:id]), :method => :put) do |f| %>
+  <%= render_user_partial f %>
+
+  <% f.fields_for :admin do |u| %>
+    <p>
+      <%= u.label :area, "权限" %><br />
+      <%= u.text_field :area %>
+    </p>
+    <p>
+      <%= u.label :info, "管理员备注" %><br />
+      <%= u.text_area :info %>
+    </p>
+  <% end %>
+  <p>
+    <%= f.submit "更新" %>
+    <%= link_to '返回', admins_path %>
+  </p>
+<% end %>
+
+

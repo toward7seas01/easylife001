@@ -1,0 +1,11 @@
+<br />
+<br />
+<% form_for(@image, :url => request.path.chomp("/new"), :html => {:multipart => true}) do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.file_field :uploaded_data %>
+  </p>
+  <p>
+    <%= f.submit "上传" %>
+  </p>
+<% end %>

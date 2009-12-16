@@ -1,0 +1,26 @@
+<h1>新建管理员</h1>
+<%= error_messages_for 'admin', 'user' %>
+<br />
+<% form_for(:user, :url => admins_path) do |f| %>
+  <p>
+    <%= f.label :name, '昵称' %><br />
+    <%= f.text_field :name %>
+  </p>
+  <%= render_user_partial f %>
+  <% f.fields_for :admin_attributes do |a| %>
+    <p>
+      <%= a.label :area, "权限" %><br />
+      <%= a.text_field :area %>
+    </p>
+    <p>
+      <%= a.label :info, "管理员备注" %><br />
+      <%= a.text_area :info %>
+    </p>
+  <% end %>
+  <p>
+    <%= f.submit "创建" %>
+    <%= link_to '返回', admins_path %>
+  </p>
+<% end %>
+
+

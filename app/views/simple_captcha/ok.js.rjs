@@ -1,0 +1,4 @@
+page.replace 'simple_captcha', :partial => "c_i"
+page.replace_html '.a_l_i tr td:last-child'
+page.replace_html 'form span'
+

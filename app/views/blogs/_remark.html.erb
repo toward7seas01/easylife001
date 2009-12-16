@@ -1,0 +1,17 @@
+<div class="post">
+  <div class="entry">
+    <p><%= j_c remark %></p>
+  </div>
+  <div class="meta">
+    <p>
+      <%= link_to h(remark.user.name), remark.user %>
+      发表于 <%= remark.updated_at %>
+      <span class='show'>
+        <%= s(remark) %>
+        <%= link_to '编辑', edit_user_blog_remark_path(:blog_id => params[:id], :id => remark.id), :class => c(remark.user) %>
+        | <%= link_to '删除', user_blog_remark_path(:blog_id => params[:id], :id => remark.id), :method => :delete, :class => remark_class_name(remark.user, blog.user) %>
+      </span>
+    </p>
+  </div>
+</div>
+

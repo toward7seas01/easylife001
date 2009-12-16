@@ -1,0 +1,24 @@
+<% content_for :head do %>
+  <%= stylesheet_link_tag "forums/index" %>
+<% end %>
+
+<table class="forums_table">
+  <tr>
+    <th>论坛</th>
+    <th>主题</th>
+    <th>文章</th>
+    <th>最新文章</th>
+  </tr>
+  <%= render :partial => 'forum', :collection => @forums, :locals => {:conceal => false } %>
+</table>
+<br />
+
+
+<table class="forums_table a">
+  <%= render :partial => 'forum', :collection => @concealed_forums, :locals => {:conceal => true } %>
+</table>
+<br />
+<%= l_a '新建论坛', new_admin_forum_path %>
+
+
+

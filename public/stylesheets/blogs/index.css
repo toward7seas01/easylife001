@@ -1,0 +1,28 @@
+#blog_title {
+  width: 160px;
+}
+
+#blog_last_updated {
+  width: 120px;
+}
+
+#blog_view_times {
+  width: 100px;
+}
+
+#blog_comments {
+  width: 80px;
+}
+
+#blogs_table td {
+  text-align: center;
+}
+
+#blogs_table td:first-child {
+  text-align: left;
+}
+
+#new_blog_path {
+  float: right;
+  margin-right: 30px;
+}

@@ -1,0 +1,23 @@
+<tr>
+  <td class="topic_type">
+    <%= Topic::Kind[topic.kind] %>
+  </td>
+  <td class="topic_title">
+    <div>
+      <%= link_to h(topic.title), forum_topic_path(topic.forum_id, topic.id) %>&nbsp;<span></span>
+    </div>
+  </td>
+  <td class="comments_size">
+    <%= topic.comments.size %>
+  </td>
+  <td class="topic_author">
+    <%=h topic.name %>
+  </td>
+  <td class="topic_view_times">
+    <%= topic.view_times %>
+  </td>
+  <td>
+    <%= topic.last_user %>
+  </td>
+</tr>
+

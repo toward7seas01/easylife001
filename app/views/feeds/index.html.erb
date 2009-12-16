@@ -1,0 +1,14 @@
+<% content_for(:head) do %>
+  <%= javascript_include_tag "feeds/index" %>
+<% end %>
+
+
+选择：<%= select "", "", @names, { :include_blank => true } %>
+<%= link_to "查看订阅情况", favourite_feeds_path %>
+<%= link_to "新的订阅", new_feed_path %>
+<br />
+<br />
+
+<div id="change">
+  <%= render :partial => "result", :object => @feeds %>
+</div>

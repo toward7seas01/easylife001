@@ -1,0 +1,12 @@
+<strong><%= flash[:notice] %></strong>
+<br />
+<br />
+<% form_tag batch_update_path do %>
+  <%= hidden_field_tag "page", params[:page]||1 %>
+  <table>
+    <%= render :partial => "update_image", :collection => @images %>
+  </table>
+  <%= submit_tag "更新" %> | <%= return_to_cover %>
+<% end %>
+<%= d_p @images %>
+

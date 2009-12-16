@@ -1,0 +1,7 @@
+<% @msgs.each do |msg| %>
+  <% div_for msg do %>
+    <%= link_to h(msg.user.name), admin_user_path(msg.user) %>： <%=h msg.content %>&nbsp;&nbsp;&nbsp;&nbsp;<%= msg.created_at %>
+    <%= link_to_remote "删除", :url => admin_msg_path(msg), :method => :delete %>
+  <% end %>
+<% end %>
+

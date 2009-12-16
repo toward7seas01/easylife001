@@ -1,0 +1,61 @@
+.quote {
+    margin: 3px 30px;
+}
+
+.quoteBody {
+    background: #FAFAFA;
+    border: 1px solid #CCCCCC;
+}
+
+.comment_author {
+  width: 180px;
+}
+.comment_author span {
+  font-weight: bolder;
+}
+
+.comment_content {
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.comment {
+  vertical-align: top;
+  height: 250px;
+}
+
+.comment_updated_time {
+  float: left;
+}
+
+.comment_user_edit  {
+  float: right;
+}
+
+.comment_profile {
+  margin-left: 20px;
+  margin-top: 30px;
+}
+
+#comments_table {
+  width: 860px;
+  border: solid #000000 2px;
+}
+
+#comments_table td{
+  color: #000000;
+  background: #eeeeee;
+  text-align: left;
+}
+
+#comments_table tr td:first-child{
+  vertical-align: top;
+}
+
+#comments_table td.spacer {
+  background-color:#242424;
+}
+
+
+
+

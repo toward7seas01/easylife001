@@ -1,0 +1,7 @@
+page.replace 'simple_captcha', :partial => "/simple_captcha/c_i"
+page.replace_html '.a_l_i form span', '验证码输入错误'
+page.replace_html '.a_l_i tr td:last-child'
+
+
+
+

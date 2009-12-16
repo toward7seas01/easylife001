@@ -1,0 +1,48 @@
+<% js "covers/base" %>
+<% css "covers/index" %>
+
+
+<% if @covers.blank? %>
+  <div id="dialog" title="来自Easylife，简单的个人应用网站">
+    <p>
+      <span class="ui-icon ui-icon-circle-check" style="float:left; margin:0 7px 50px 0;"></span>
+      您还没有相册
+    </p>
+    <p>
+      现在就点击<b><%= link_to '新建相册', new_user_cover_path %></b>.
+    </p>
+  </div>
+<% end %>
+
+
+<table id="cover_table">
+  <% for cover in @covers %>
+    <% user_cover_path = user_cover_path(:id => cover.id) %>
+    <tr>
+      <% display(cover) do %>
+        <td><%= link_to cover_thumbnail(cover), user_cover_path %></td>
+        <td>
+          <div class="cover">
+            <span><b><%= link_to h(cover.title), user_cover_path %></b></span><br />
+            <b><%= cover.images.size %> 张照片</b><br />
+            <b>更新于 <%= cover.updated_at %></b><br />
+            <b>创建于 <%= cover.created_at %></b><br />
+
+            <%= l_c '编辑', edit_user_cover_path(:id => cover.id) %>
+            <%= l_c_d user_cover_path %>
+
+            <%= s(cover) %>
+          </div>
+        </td>
+      <% end %>
+    </tr>
+    <tr>
+      <td colspan="2"><br /></td>
+    </tr>
+  <% end %>
+</table>
+
+<br />
+
+<%= l_c '新建相册', new_user_cover_path %>
+

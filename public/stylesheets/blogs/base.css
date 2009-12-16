@@ -1,0 +1,13 @@
+
+#show_blog_votes {
+  float: right;
+}
+
+.show {
+  float: right;
+}
+
+#show_blog_comments_pagination {
+  float: right;
+  margin-right: 30px;
+}

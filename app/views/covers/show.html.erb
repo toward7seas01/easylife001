@@ -1,0 +1,62 @@
+<% css "covers/show" %>
+
+<table id="cover_info">
+  <tr>
+    <td>
+      <b>相册:</b>
+    </td>
+    <td>
+      <div>
+        <b><%=h @cover.title %></b>
+        <b><%= l_c "上传照片", new_user_cover_image_path(:cover_id => params[:id]) %></b>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <b>备注:</b>
+    </td>
+    <td>
+      <b><%=h @cover.content %></b>
+    </td>
+  </tr>
+</table>
+<br />
+<br />
+
+
+<table id="gallery">
+  <% @images.in_groups_of(4, false) do |image_line| %>
+    <tr>
+      <% image_line.each do |image| %>
+        <td>
+          <% display(image) do %>
+            <%= link_to( thumb_image(image), image.public_filename, :title => image.info, :class => "NeedLightBox" ) %><br />
+            <% image_path_hash = {:cover_id => params[:id], :id => image.id} %>
+            <%= l_c '编辑', edit_user_cover_image_path(image_path_hash) %> |
+            <%= l_c_d user_cover_image_path(image_path_hash) %>
+
+            <%= s(image) %>
+          <% end %>
+        </td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
+
+
+<br />
+<br />
+
+<%= l_c '编辑相册', edit_user_cover_path %>
+<%= link_to '返回封面', user_covers_path %>
+
+<%= l_c '批量删除', ready_batch_delete_path(params[:user_id], params[:id])  %>
+<%= l_c '批量编辑', ready_batch_update_path(params[:user_id], params[:id])  %>
+<%= s(@cover) %><br />
+
+<%= d_p @images %>
+
+
+
+

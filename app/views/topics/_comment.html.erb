@@ -1,0 +1,40 @@
+<% user = comment.user %>
+<tr>
+  <td class="comment_author">
+    <div class="comment_profile">
+      <span>
+        <%= link_to h(user.name) , user %>
+      </span><br /><br />
+      <%= user_profile(user) %><br /><br />
+      文章：<%= user.comments.size %><br />
+      来自：<%=h user.from %>
+    </div>
+  </td>
+  <td class="comment">
+    <div class="comment_content" >
+      <% unless preview %>
+        <span class="comment_updated_time" >
+          <%= comment.updated_at %>
+        </span>
+        <span class="comment_user_edit">
+          <%= s(comment) %>
+          <% unless comment.conceal %>
+            <%= l_s "引用", new_forum_topic_comment_path(:topic_id => params[:id], :qid => comment.id ) %>
+          <% end %>
+          <% content_tag :span, :class => control_display(user) do %>
+            <%= topic_or_comment_path(comment) %>
+            <%= l_d forum_topic_comment_path(:topic_id => params[:id], :id => comment.id) -%>
+          <% end %>&nbsp;
+        </span>&nbsp;
+      <% end %>
+      <hr />
+      <%= j_c(comment) %>
+    </div>
+  </td>
+</tr>
+<tr>
+  <td colspan="2" class="spacer" >
+    <br />
+  </td>
+</tr>
+

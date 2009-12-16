@@ -1,0 +1,8 @@
+<% @categories.each do |category| %>
+  <% div_for category do %>
+    <%=h category.name %> <%= category.created_at %>
+    <%= link_to_remote '删除', :url => admin_category_path(category.id), :method => :delete %>
+  <% end %>
+<% end %>
+
+<%= d_p @categories %>

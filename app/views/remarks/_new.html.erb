@@ -1,0 +1,9 @@
+<% form_for(@remark, :url => user_blog_remarks_path) do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.text_area :content, :size => "40x5" %>
+  </p>
+  <p>
+    <%= f.submit "发表" %>
+  </p>
+<% end %>

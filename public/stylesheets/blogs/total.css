@@ -1,0 +1,47 @@
+
+#latest {
+    background: #fff;
+}
+
+#latest div {
+    color: #000;
+}
+
+
+#latest h3 {
+    background: #48ACDE;
+    color: #000;
+    text-align: center;
+}
+
+#accordion {
+    width: 500px;
+    background: #fff;
+
+}
+
+#accordionResizer {
+    float: left;
+}
+
+#right_sidebar {
+    width: 250px;
+    float: right;
+}
+
+#s {
+    width: 190px;
+}
+
+.remark {
+    border-top: 1px dashed
+}
+
+#last_remarks div {
+    margin: 5px;
+}
+
+#latest ul {
+    margin-left: -12px;
+}
+

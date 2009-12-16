@@ -1,0 +1,99 @@
+zh-CN: 
+  activerecord: 
+    models: 
+      forum: "论坛"  
+      cover: "相册"  
+      user: "用户"  
+      blog: "博客"  
+      admin: "管理员"  
+      topic: "主题"  
+      image: "图片"  
+      comment: "评论"  
+      remark: "回复"  
+
+    attributes: 
+      forum: 
+        title: "标题"  
+        info: "信息"  
+        comments: "评论"  
+        topics: "主题"  
+
+      msg: 
+        info: "信息"  
+        user: "用户"  
+
+      cover: 
+        title: "标题"  
+        info: "备注"   
+        images: "图片"  
+        thumbnail: "缩略图"  
+
+      user: 
+        name: "昵称"  
+        info: "备注"  
+        from: "来自"  
+        sex: "性别"  
+        profession: "职业"  
+        taste: "兴趣"  
+        email: "电子邮箱"  
+        view_times: "访问次数"  
+        covers: "相册"  
+        comments: "评论"  
+        remarks: "回复"  
+        images: "图片"  
+        topics: "主题"  
+        banner: "背景"  
+        blogs: "博客"   
+        results: "订阅"  
+        profile: "头像" 
+        password: "密码" 
+
+
+
+      blog: 
+        title: "标题"  
+        content: "内容"  
+        view_times: "访问次数"           
+        blog_votes: "博客票"  
+        remarks: "回复"  
+        categories: "分类"  
+        user: "作者"  
+
+      admin: 
+        area: "区"  
+        info: "备注"  
+        name: "名字"  
+        user: "相关用户"  
+
+      topic: 
+        title: "标题"  
+        view_times: "查看次数"  
+        kind: "种类"  
+        comments: "评论"  
+        forum: "论坛"  
+        comment: "评论"  
+        user: "作者"  
+
+      image: 
+        size: "大小"  
+        width: "宽度"  
+        height: "高度"  
+        content_type: "内容类型"  
+        filename: "文件名"  
+        thumbnail: "缩略图"  
+        info: "备注"       
+        cover: "所属相册"  
+        thumbnails: "缩略图"  
+        user: "所属用户"  
+
+      comment: 
+        content: "内容"          
+        forum: "所在论坛"  
+        user: "所属用户"  
+        topic: "所属主题"  
+
+      remark: 
+        content: "内容"            
+        blog: "所属博客"  
+        user: "所属用户"  
+

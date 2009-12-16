@@ -1,0 +1,14 @@
+<h3>博客评论</h3>
+<br />
+<br />
+
+<% form_for(@remark, :url => url) do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.text_area :content, :class => "mceEditor" %>
+  </p>
+  <p>
+    <%= f.submit "发表" %>
+    <%= link_to '返回', user_blog_path(:id => params[:blog_id]) %>
+  </p>
+<% end %>

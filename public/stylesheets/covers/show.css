@@ -1,0 +1,14 @@
+#cover_info tr {
+    height: 40px;
+}
+
+#cover_info tr:first-child td:first-child {
+    width: 50px;
+}
+
+#cover_info tr:first-child td:last-child div a {
+    position: relative;
+    left: 600px;
+}
+
+

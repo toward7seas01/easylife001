@@ -1,0 +1,24 @@
+<%= error_messages_for 'topic', 'comment' %>
+
+<% form_for(@topic, :url => url) do |f| %>
+  <b>主题</b>
+  <br />
+  <br />
+  <%= f.text_field :title %>
+  <br />
+  <br />
+  <b>内容</b>
+  <br />
+  <br />
+  <p>
+    <% f.fields_for :comments do |t| %>
+      <%= t.text_area :content, :class => "mceEditor" %>
+    <% end %>
+  </p>
+
+  <p>
+    <%= f.submit "提交" %>
+    <%= f.submit '预览' %>
+    <%= link_to '返回', forum_path(params[:forum_id]) %>
+  </p>
+<% end %>

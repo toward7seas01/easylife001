@@ -1,0 +1,17 @@
+<p>
+  <b>管理员:</b>
+  <%=h @admin.name %>
+</p>
+<p>
+  <b>权限:</b>
+  <%=h @admin.area %>
+</p>
+
+<p>
+  <b>管理员备注:</b>
+  <%=h @admin.info %>
+</p>
+
+
+<%= link_to '编辑', edit_admin_path(@admin) %> |
+<%= link_to '返回', admins_path %>

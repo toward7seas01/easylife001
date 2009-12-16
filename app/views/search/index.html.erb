@@ -1,0 +1,16 @@
+<div id="search_line" >
+  <% form_tag do %>
+    <p id="search_type">
+      博客 <%= radio_button_tag :type, "blog" %>
+      帖子 <%= radio_button_tag :type, "comment" %>
+      用户 <%= radio_button_tag :type, "user" %>
+    </p>
+    <%= text_field_tag :s, "", :id => "search_input" %><br /><br />
+    <%= submit_tag '搜索' %>
+  <% end %>
+</div>
+
+
+
+
+

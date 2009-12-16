@@ -1,0 +1,32 @@
+<% content_for :head do %>
+  <%= stylesheet_link_tag "forums/show" %>
+<% end %>
+
+<div>
+  <span id="navi" >
+    <%= link_to '论坛首页', forums_path -%>&nbsp;→&nbsp;<%= link_to h(@forum.title), @forum %>
+  </span>
+
+  <span id="new_topic_path" class="session">
+    <%= link_to '发表新帖', new_forum_topic_path(params[:id]) -%>
+  </span>
+
+</div>
+<br />
+<br />
+<br />
+
+<table id="topics_table">
+  <tr>
+    <th colspan="2">主题</th>
+    <th>回复</th>
+    <th>作者</th>
+    <th>阅读次数</th>
+    <th>最新评论</th>
+  </tr>
+
+  <%= render :partial => "topic", :collection=> @topics %>
+</table>
+
+<%= d_p @topics %>
+<%= show_concealed_or_public_topics %>

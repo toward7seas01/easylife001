@@ -1,0 +1,17 @@
+<% user = comment.user %>
+
+<div class="searched_user">
+  <div class="user_profile">
+    <%= user_profile(user) %>
+  </div>
+
+  <div class="user_info">
+    <%= show_truncated_or_excerpted(comment.content, *@keys) %>
+  </div>
+  <div class="result_path">
+    <%= link_to h(user.name), user %> 发表于 <%= comment.updated_at %>
+    <%= link_to '查看原帖', forum_topic_path(comment.forum_id, comment.topic_id) %><br />
+  </div>
+</div>
+
+

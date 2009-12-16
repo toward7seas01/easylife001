@@ -1,0 +1,28 @@
+<tr>
+  <td class="forum_name">
+    <div>
+      <%= link_to h(forum.title), forum %><br />
+      <%=h forum.info -%>
+
+      <div>
+        <%= l_a '编辑', edit_admin_forum_path(forum) %>
+        <% if conceal %>
+          <%= l_a '公开', aunconceal_admin_forum_path(forum), :method => :post %>
+          <%= l_a_d admin_forum_path(forum) %>
+        <% else %>
+          <%= l_a '隐藏', aconceal_admin_forum_path(forum), :method => :post %>
+        <% end %>
+      </div>
+
+    </div>
+  </td>
+  <td class="forum_topics">
+    <%= forum.topics.size %>
+  </td>
+  <td class="forum_comments">
+    <%= forum.comments.size %>
+  </td>
+  <td>
+    <%= forum.last_user %>
+  </td>
+</tr>

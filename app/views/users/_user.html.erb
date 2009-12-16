@@ -1,0 +1,16 @@
+<div class="searched_user">
+  <div class="user_profile">
+    <%= user_profile(user) %>
+  </div>
+
+  <div class="user_info">
+    人气：<%= user.view_times %><br />
+    博文：<%= user.blogs.size %><br />
+    帖子：<%= user.comments.size %><br />
+    来自：<%=h user.from %><br />
+    兴趣：<%=h user.taste %>
+  </div>
+  &nbsp;
+</div>
+
+

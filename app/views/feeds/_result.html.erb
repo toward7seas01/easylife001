@@ -1,0 +1,11 @@
+<% result.each do |i| %>
+  <%=h i.name %>
+  <% if i.forum_id.nil? %>
+    发表了博文 <%= link_to h(i.title), user_blog_path(i.user_id, i.id) %><br />
+  <% else %>
+    发表了帖子 <%= link_to h(i.title), forum_topic_path(i.forum_id, i.id) %><br />
+  <% end %>
+<% end %>
+<br />
+
+<%= d_p result %>

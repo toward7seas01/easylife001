@@ -1,0 +1,44 @@
+<p>
+  <%= show_profile @user.profile %>
+</p>
+
+<p>
+  <b>昵称:</b>
+  <%=h @user.name %>
+</p>
+
+<p>
+  <b>个人信息:</b>
+  <%=h @user.info %>
+</p>
+
+<p>
+  <b>来自:</b>
+  <%=h @user.from %>
+</p>
+
+<p>
+  <b>性别:</b>
+  <%=h @user.sex %>
+</p>
+
+<p>
+  <b>职业:</b>
+  <%=h @user.profession %>
+</p>
+
+<p>
+  <b>兴趣:</b>
+  <%=h @user.taste %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @user.email %>
+</p>
+
+
+<%= l_c '编辑', edit_user_path(@user) %>
+<%= s(@user) %>
+<%= l_a_d @user %>
+

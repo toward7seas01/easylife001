@@ -1,0 +1,22 @@
+<h1>新建论坛</h1>
+<br />
+<br />
+
+<% form_for(@forum, :url => {:action => :create }) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :title, '论坛' %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :info, '补充说明' %><br />
+    <%= f.text_field :info %>
+  </p>
+  <p>
+    <%= f.submit "创建" %>
+    <%= link_to '返回', admin_forums_path %>
+  </p>
+<% end %>
+
+

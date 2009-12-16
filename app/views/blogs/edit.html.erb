@@ -1,0 +1,22 @@
+<% form_for(@blog, :url => user_blog_path) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <b>标题</b><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <b>内容</b><br />
+    <%= f.text_area :content, :class => "mceEditor" %>
+  </p>
+  <p>
+    <b>分类（以空格分割）</b><br />
+    <%= f.text_field :category_n %>
+  </p>
+  <p>
+    <%= f.submit "更新" %>
+  </p>
+<% end %>
+
+<%= link_to '阅读', user_blog_path %> |
+<%= link_to '返回博客首页', user_blogs_path %>

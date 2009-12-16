@@ -1,0 +1,6 @@
+page.assign 'message', @user.format_errors
+page.assign 'num', 0
+page << "$('.a_l_i tr td:last-child').each(function(){$(this).html(message[num++])})"
+page.replace '#simple_captcha', :partial => "/simple_captcha/c_i"
+page.replace_html '.a_l_i form span'
+

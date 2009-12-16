@@ -1,0 +1,55 @@
+<% content_for :head do %>
+  <script type="text/javascript">
+    jQuery(function(){
+      $("#accordion").accordion();
+    })
+  </script>
+  <%= stylesheet_link_tag "blogs/total" %>
+<% end %>
+
+<div id="accordionResizer" >
+  <div id="accordion">
+    <% @popular_blogs.each do |category, related_blogs| %>
+      <h3><a href="#"><%=h category %></a></h3>
+      <div>
+        <p>
+          <%= render related_blogs %>
+        </p>
+      </div>
+    <% end %>
+  </div>
+</div>
+<div id="right_sidebar">
+  <div>
+    <% form_tag "/search/blog_search", :method => :get do %>
+      <fieldset>
+        <input type="text" id="s" name="s" value="" />
+        <input type="submit" id="x" value="搜 索" />
+      </fieldset>
+    <% end %>
+  </div>
+  <br />
+  <div id="latest">
+    <div>
+      <h3>最新博文</h3>
+      <ul>
+        <% @blogs.each do |blog| %>
+          <li><%=h blog.title %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div id="last_remarks">
+      <h3>最新回复</h3>
+      <div>
+        <% @remarks.each do |remark| %>
+          <p class="remark"><%= spy truncate_u(remark.content, 30) %><br /><%=h remark.user.name %>&nbsp;评论了&nbsp;<%= link_to h(remark.blog.title), [remark.user, remark.blog]  %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+

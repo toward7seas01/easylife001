@@ -1,0 +1,46 @@
+<% head ["blogs/index"] %>
+
+<div id="new_blog_path" >
+  <%= l_s '发表博客', new_user_blog_path %>
+</div>
+<br />
+<br />
+<br />
+
+<table id="blogs_table">
+  <tr>
+    <th id="blog_title">标题</th>
+    <th id="blog_last_updated">最后更新</th>
+    <th id="blog_view_times">阅读次数</th>
+    <th id="blog_comments">评论</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <br />
+    </td>
+  </tr>
+  <% if @blogs.blank? %>
+    <tr>
+      <td colspan="4">
+        <%= l_s "目前还没有博客发表，写一篇？", new_user_blog_path %>
+      </td>
+    </tr>
+  <% else %>
+    <% for blog in @blogs %>
+      <% user_blog_path = user_blog_path(:id => blog.id) %>
+      <tr>
+        <td><%= link_to h(blog.title), user_blog_path %></td>
+        <td><%= blog.updated_at %></td>
+        <td><%= blog.blog_track.view_times %></td>
+        <td><%= blog.remarks.size %></td>
+
+        <td><%= link_to '阅读', user_blog_path %></td>
+        <td><%= l_c '编辑', edit_user_blog_path( :id => blog.id) %></td>
+        <td><%= l_c_d user_blog_path + "?page=#{params[:page]}" %></td>
+      </tr>
+    <% end %>
+  <% end %>
+</table>
+<br />
+<br />
+<%= d_p @blogs %>

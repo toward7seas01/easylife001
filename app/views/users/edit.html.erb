@@ -1,0 +1,15 @@
+<h1>修改用户信息</h1>
+<br />
+<br />
+<% form_for(@user) do |f| %>
+  <%= f.error_messages %>
+
+  <%= render :partial => '/users/new_user', :locals => {:u => f } %>
+  <p>
+    <%= f.submit "修改" %>
+    <%= link_to '返回', @user %>
+  </p>
+<% end %>
+
+
+

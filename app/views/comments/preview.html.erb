@@ -1,0 +1,9 @@
+<%= render :partial => "topics/show" %>
+<br />
+
+<% form_tag back_preview_path do %>
+  <%= topic_title_field %>
+  <%= hidden_field_tag :content, @comment.content %>
+  <%= submit_tag "返回" %>
+<% end %>
+

@@ -1,0 +1,62 @@
+<% js "blogs/show" %>
+
+
+<% display @blog do %>
+  <div class="post">
+    <div id="show_blog_votes" >
+      顶 <span id="vote_up"><%= @vote_kind[1] %></span>
+      踩 <span id="vote_down"><%=  @vote_kind[-1] %></span>
+    </div>
+    <p>
+      <b>分类:</b>
+      <%=h @blog.category_n %>
+    </p>
+    <h1 class="title">
+      <%=h @blog.title %>
+    </h1>
+    <div class="entry">
+      <p>
+        <%= j_c(@blog) %>
+      </p>
+    </div>
+    <div class="meta">
+      <p>
+        <%=h @blog.user.name %> 发表于 <%= @blog.created_at %>
+        <span class='show'>
+          <%= s(@blog) %>
+          <%= l_c '编辑 ', edit_user_blog_path %> |
+          <%= link_to '返回', user_blogs_path %>
+        </span>
+      </p>
+    </div>
+  </div>
+<% end %>
+
+<div id="shove" >
+  <span class="u vote">
+    <%= button_to_remote( '顶', {:url => ajax_vote_up_user_blog_path, :method => :post} ) %>
+    <%= button_to_remote( '踩', {:url => ajax_vote_down_user_blog_path, :method => :post} ) %>
+  </span>
+  <%= l_s "回复", new_user_blog_remark_path(:blog_id => params[:id]) %>
+</div>
+
+
+<br />
+<br />
+
+
+<div id="blog_comment_history">
+  <%= render :partial => 'remark', :collection => @remarks, :locals => {:blog => @blog } %>
+</div>
+<br />
+<br />
+<%= l_r_s '快速回复', :update => "new_remark", :url => new_user_blog_remark_path(:blog_id => params[:id]), :method => :get %>
+<br />
+<br />
+<div id="new_remark"></div>
+
+<div id="blog_comments_pagination" >
+  <%= d_p @remarks %>
+</div>
+
+

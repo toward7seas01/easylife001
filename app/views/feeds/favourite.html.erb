@@ -1,0 +1,9 @@
+我的订阅：<br />
+<br />
+<%= render :partial => "feed", :collection => @humans %>
+<hr>
+人工推荐：<br />
+<br />
+<%= render :partial => "feed", :collection => @autos %>
+<br />
+<%= link_to "返回", feeds_path %>

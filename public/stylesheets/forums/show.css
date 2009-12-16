@@ -1,0 +1,52 @@
+#topics_table {
+  width: 860px;
+  border: solid #000000 2px;
+  font-weight: bolder;
+}
+
+#topics_table td {
+  color: #000000;
+  background: #ffffff;
+  text-align: center;
+  height: 40px;
+}
+
+#topics_table th {
+  background: #242424;
+  height: 35px;
+  color: #ffffff;
+}
+
+.topic_title {
+  width: 350px;
+}
+
+.topic_title div {
+  text-align: left;
+  margin-left: 15px;
+}
+
+.topic_type {
+  width: 40px;
+}
+
+.topic_author {
+  width: 100px;
+}
+
+.topic_view_times {
+  width: 100px;
+}
+
+.topic_comments_size {
+  width: 60px;
+}
+
+#navi {
+  float: left;
+}
+
+#new_topic_path {
+  float: right;
+}
+

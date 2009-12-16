@@ -1,0 +1,19 @@
+<div id="login">
+  <div>
+    <% form_tag("/admin/sessions", :html => {:class => "loginBar" } ) do %>
+      <fieldset>
+        <legend>
+          <span style="color:#FFFFFF" >
+            <%= flash[:notice] %>
+          </span>&nbsp;
+        </legend>
+        <%= text_field_tag :name, "昵称" %>
+        <%= password_field_tag :password, "Password" %>
+        <button type="submit" class="loginbtn">
+          <strong>进入</strong>
+          <%= image_tag "session/bullet_tick.png" %>
+        </button>
+      </fieldset>
+    <% end %>
+  </div>
+</div>

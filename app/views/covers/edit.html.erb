@@ -1,0 +1,23 @@
+<p>
+  <%= cover_thumbnail(@cover) %>
+</p>
+
+
+<% form_for(@cover, :url => user_cover_path) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <b>相册</b><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <b>备注</b><br />
+    <%= f.text_area :content %>
+  </p>
+  <p>
+    <%= f.submit "更新" %>
+  </p>
+<% end %>
+
+<%= link_to '进入相册', user_cover_path %> |
+<%= link_to '返回', user_covers_path %>

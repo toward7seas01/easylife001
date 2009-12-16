@@ -1,0 +1,15 @@
+<% user_blog_path = user_blog_path(blog.user_id, blog.id) %>
+<div class="post">                      
+  <h2 class="title"><%= link_to h(blog.title), user_blog_path %></h2>
+  <div class="entry">
+    <%= show_truncated_or_excerpted(blog.content) %>
+  </div>
+  <div class="meta">
+    <p class="byline"><%= link_to h(blog.user.name), blog.user %> 发表于 <%= blog.updated_at %></p>
+    <p class="links">
+      <%= link_to "全文阅读", user_blog_path, :class => "more" %> |
+      <%= link_to "评论 (#{blog.remarks.size})", user_blog_path %>
+    </p>
+  </div>
+</div>
+

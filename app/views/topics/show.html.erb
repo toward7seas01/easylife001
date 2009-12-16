@@ -1,0 +1,8 @@
+<%= render :partial => "show" %>
+
+<br />
+<%= link_to '返回', forum_path(params[:forum_id]) %>&nbsp;
+<%= l_s '发表回复', new_forum_topic_comment_path(:topic_id => params[:id]) %>
+
+<hr />
+<%= d_p @comments %>

@@ -1,0 +1,17 @@
+<% form_for(@image, :url => user_cover_images_path, :html => {:multipart => true }) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.file_field :uploaded_data %>
+  </p>
+  <p>
+    <%= f.label :info, "<b>备注</b>" %><br />
+    <%= f.text_area :info %>
+  </p>
+  <p>
+    <%= f.submit "创建" %>
+    <%= return_to_cover %>
+  </p>
+<% end %>
+
+

@@ -1,0 +1,32 @@
+<% head ["say/hello", "search/result"], ["say/hello"] %>
+
+<div id="rotate">
+  <ul class="ui-tabs-nav">
+    <li class="ui-tabs-selected"><a href="/p_blogs" title="Todo Overview"><span>人气博文</span></a></li>
+    <li class=""><a href="/p_topics" title="Todo Overview"><span>新鲜热贴</span></a></li>
+    <li class=""><a href="/p_bloggers" title="Todo Overview"><span>博客排行</span></a></li>
+  </ul>
+</div>
+<div id="Todo_Overview"></div>
+<br />
+
+<div id='chat'>
+  <fieldset class="chat">
+
+    <legend>即时留言板（需登录，shift + 回车 提交)</legend>
+    <div id="ok">
+    </div>
+    <div id='chat_form'>
+      <% form_for :msg do |f| %>
+        <%= f.text_area :content, :size => "60x2" %>
+      <% end %>
+    </div>
+
+  </fieldset>
+</div>
+
+
+
+
+
+

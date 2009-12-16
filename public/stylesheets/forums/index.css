@@ -1,0 +1,31 @@
+.forums_table {
+  width: 860px;
+  border: solid #000000 2px;
+  font-weight: bolder;
+}
+
+.forums_table td {
+  color: #000000;
+  background: #ffffff;
+  text-align: center;
+  height: 40px;
+}
+
+.forums_table td:first-child div {
+  text-align: left;
+  margin-left: 25px;
+  width: 400px;
+}
+
+.forums_table td:first-child div div {
+  margin-left: 200px;
+}
+
+.forum_name {
+  width: 450px;
+}
+
+.forum_topics, .forum_comments {
+  width: 100px;
+}
+

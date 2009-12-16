@@ -1,0 +1,23 @@
+<% content_for :head do %>
+  <%= javascript_include_tag "images/image_trash" %>
+  <%= stylesheet_link_tag "images/image_trash" %>
+<% end %>
+
+<div class="demo ui-widget ui-helper-clearfix">
+
+  <ul id="pic" class="pic ui-helper-reset ui-helper-clearfix">
+    <%= render :partial => "images/delete_image", :collection => @images %>
+  </ul>
+
+  <div id="trash" class="ui-widget-content ui-state-default">
+    <h4 class="ui-widget-header"><span class="ui-icon ui-icon-trash"></span> 回收站</h4>
+  </div>
+  
+  <div>
+    <%= link_to_remote '确认删除', :url => batch_delete_path, :with => with_options %>&nbsp;
+    <%= return_to_cover %>
+  </div>
+
+</div>
+
+<%= d_p @images %>

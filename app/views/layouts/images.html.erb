@@ -1,0 +1,18 @@
+<% content_for :lhead do %>
+  <%= stylesheet_link_tag "images/jquery.lightbox-0.5" %>
+  <%= javascript_include_tag "images/jquery.lightbox-0.5", "images/base" %>
+<% end %>
+
+<%= render :partial => '/layouts/header' %>
+
+<div id="wrapper">
+  <div id="wrapper-btm">
+    <div id="page">
+      <div id="insert">
+        <%= yield %>
+      </div>
+      <br />
+    </div>
+  </div>
+</div>
+<%= render :partial => '/layouts/footer' %>

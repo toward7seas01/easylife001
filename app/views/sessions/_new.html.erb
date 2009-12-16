@@ -1,0 +1,13 @@
+<div class='a_l_i'>
+  <span>用户登录<a href='X'>X</a></span>
+  <br />
+  <br />
+  <% form_remote_tag :url => sessions_path  do %>
+    昵称： <input type='text' name='name' /><br /><br />
+    密码： <input type='password' name='password' /><br /><br />
+    <button type='submit'>
+      <strong>登录</strong>
+    </button>
+    <span id="error_message"></span>
+  <% end %>
+</div>

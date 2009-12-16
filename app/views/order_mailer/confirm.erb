@@ -1,0 +1,5 @@
+<%- home = "http://www.easylife.com" -%>
+您好，您在 <%= home %> 的注册信息为
+
+昵称： <%= @user.name %>
+激活链接： <%= "#{home}/users/activation/#{@user.active_code}"  %>

@@ -1,0 +1,17 @@
+<div class='a_l_i'>
+  <span>用户注册<a href='X'>X</a></span>
+  <br />
+  <br />
+  <% form_remote_for @user do |f| %>
+    <table>
+      <tr><td>昵称：</td><td><%= f.text_field :name %></td><td></td></tr>
+      <tr><td>电子邮箱：</td><td><%= f.text_field :email %></td><td></td></tr>
+      <tr><td>密码：</td><td><%= f.password_field :password %></td><td></td></tr>
+      <tr><td>密码确认：</td><td><%= f.password_field :password_confirmation %></td><td></td></tr>
+    </table>
+    <br />
+    <%= render :partial => "/simple_captcha/c_i" %><span></span><br />
+    <div><%= link_to_remote "看不清？ 换一张", :url => "/simple_captcha/ok"  %></div>
+    <%= f.submit '注册' %>
+  <% end %>
+</div>

@@ -1,0 +1,12 @@
+<%= render :partial => "profiles/create", :locals => {:width => @image.width , :height => @image.height } %>
+
+<%= image_tag @image.public_filename, :id => "cropbox" %><br /><br />
+
+<%= flash[:notice] %>
+
+<% form_for @image, :url => "#{request.path}/#{@image.id}" do |f| %>
+  <% for attribute in ProfileLike::CropNeed %>
+    <%= f.hidden_field attribute, :id => attribute %>
+  <% end %>
+  <p><%= f.submit "裁减上传" %></p>
+<% end %>
