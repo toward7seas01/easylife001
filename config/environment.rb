@@ -32,10 +32,16 @@ Rails::Initializer.run do |config|
   # config.gem "aws-s3", :lib => "aws/s3"
   config.gem 'javan-whenever', :lib => false, :source => 'http://gems.github.com'
   config.gem 'nokogiri', :lib => false
+  config.gem 'rspec-rails', :lib => false
+  config.gem 'rspec', :lib => false
+  config.gem 'cucumber'
+  config.gem 'webrat'
+  config.gem "factory_girl", :source => "http://gemcutter.org"
+
   #  config.gem 'scrapi'
   #  config.gem 'vestal_versions'
 
-#  config.action_controller.page_cache_directory = RAILS_ROOT + "/public/cache/"
+  #  config.action_controller.page_cache_directory = RAILS_ROOT + "/public/cache/"
 
   # Only load the plugins named here, in the order given. By default, all plugins
   # in vendor/plugins are loaded in alphabetical order.
@@ -90,15 +96,17 @@ Rails::Initializer.run do |config|
     :tls => true,
     :address => "smtp.gmail.com",
     :port => "587",
+    #  :domain => "YOURDOMAIN",
     :authentication => :plain,
     :user_name => "easylife37@gmail.com",
-    :password => "12121212"
+    :password => "qwertyui"
   }
   
   #  config.action_controller.session[:domain] = DEFAULT_ROOT_DOMAIN
 end
 
 def call_rake(task, options = {})
+  return if RAILS_ENV == "test"
   args = options.map do |k, v| "#{k.to_s.upcase}=#{v}" end
   system("rake #{task} #{args.join(" ")} &")
 end
