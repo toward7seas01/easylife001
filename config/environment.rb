@@ -91,8 +91,8 @@ Rails::Initializer.run do |config|
     :address => "smtp.gmail.com",
     :port => "587",
     :authentication => :plain,
-    :user_name => "",
-    :password => ""
+    :user_name => "easylife37@gmail.com",
+    :password => "12121212"
   }
   
   #  config.action_controller.session[:domain] = DEFAULT_ROOT_DOMAIN
