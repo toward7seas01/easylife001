@@ -15,7 +15,7 @@ ActiveRecord::Base.class_eval do
 end
 
 
-file = File.open("/root/work/knight/public/images/user_logo.gif")
+file = File.open("#{RAILS_ROOT}/public/images/user_logo.gif")
 profile = Profile.create(:uploaded_data => file)
 file.close
 

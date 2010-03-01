@@ -17,7 +17,7 @@ module UserCallbacks
   end
 
   def generate_profile
-    file = File.open("/root/work/knight/public/images/user_logo.gif")
+    file = File.open("#{RAILS_ROOT}/public/images/user_logo.gif")
     profile = create_profile(:uploaded_data => file)
     file.close
 
